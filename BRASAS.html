@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brasas | Churrasqueiro e Barman</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cor-primaria: #e63946; 
+            --cor-secundaria: #f4a261; 
+            --cor-texto: #ffffff;
+            --overlay-preto: rgba(0, 0, 0, 0.75);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--cor-texto);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: #000;
+        }
+
+        .fundo-pagina {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -2;
+            background-image: url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1350&q=80'); 
+            background-size: cover;
+            background-position: center;
+            filter: grayscale(20%) brightness(40%);
+        }
+
+        .fundo-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle, transparent 20%, #000 100%);
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.95);
+            padding: 0.8rem 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--cor-primaria);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-img-top {
+            height: 45px;
+            width: auto;
+            border-radius: 5px;
+        }
+
+        .logo-texto {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(0.9rem, 4vw, 1.3rem);
+            font-weight: bold;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        .logo-texto span { color: var(--cor-primaria); }
+
+        .contatos-header {
+            text-align: right;
+            font-size: 0.8rem;
+            opacity: 0.9;
+            font-weight: bold;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(2.2rem, 7vw, 4rem);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            color: var(--cor-secundaria);
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 4vw, 1.3rem);
+            margin-bottom: 2.5rem;
+            max-width: 750px;
+            font-weight: 300;
+        }
+
+        .btn {
+            background-color: var(--cor-primaria);
+            color: white;
+            padding: 18px 40px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: 0.3s;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(230, 57, 70, 0.4);
+        }
+
+        .btn:hover { background-color: #b91d2a; transform: scale(1.05); }
+
+        .servicos { padding: 100px 20px; max-width: 1200px; margin: 0 auto; text-align: center; }
+
+        .servicos h2 {
+            font-family: 'Oswald', sans-serif; font-size: 2.5rem; margin-bottom: 50px;
+            text-transform: uppercase; color: var(--cor-primaria);
+        }
+
+        .grid-servicos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover { border-color: var(--cor-secundaria); background: rgba(255, 255, 255, 0.08); }
+
+        .card h3 { color: var(--cor-secundaria); margin-bottom: 15px; font-family: 'Oswald', sans-serif; font-size: 1.5rem; }
+
+        .card p { font-size: 0.95rem; color: #ddd; margin-bottom: 10px; }
+
+        .lista-drinks {
+            list-style: none;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5px;
+            color: #eee;
+        }
+
+        .lista-drinks li::before {
+            content: "🔥";
+            margin-right: 8px;
+            font-size: 0.8rem;
+        }
+
+        .cortesia-box {
+            margin-top: auto;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-style: italic;
+            color: var(--cor-secundaria) !important;
+        }
+
+        .social-section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .insta-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+            text-decoration: none;
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .insta-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(220, 39, 67, 0.4);
+        }
+
+        .whatsapp-float {
+            position: fixed; bottom: 30px; right: 30px;
+            background-color: #25d366; color: white;
+            padding: 15px 25px; border-radius: 50px;
+            display: flex; align-items: center; gap: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            z-index: 1001; text-decoration: none; font-weight: bold;
+            transition: 0.3s;
+        }
+
+        footer {
+            padding: 40px 20px; text-align: center;
+            background-color: #000; border-top: 1px solid #222;
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 0.6rem; }
+            .logo-img-top { height: 35px; }
+            .contatos-header { font-size: 0.7rem; }
+            .whatsapp-float { bottom: 20px; right: 20px; padding: 12px 20px; font-size: 0.9rem; }
+            .lista-drinks { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="fundo-pagina"></div>
+    <div class="fundo-overlay"></div>
+
+    <header>
+        <nav>
+            <div class="logo-container">
+                <img src="https://i.ibb.co/v4mYvWn/logo-brasas-pequena.jpg" alt="Logo Brasas" class="logo-img-top">
+                <div class="logo-texto">BRASAS | <span>Churrasqueiro & Barman</span></div>
+            </div>
+            <div class="contatos-header">
+                (21) 97151-6114<br>
+                
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>O Sabor Premium da Brasa</h1>
+        <p>Especialista em churrasco e coquetelaria profissional no Rio de Janeiro. Transformamos sua comemoração em um evento inesquecível.</p>
+        <a href="https://wa.me/5521971516114" class="btn">Solicitar Orçamento</a>
+    </section>
+
+    <section class="servicos">
+        <h2>Atendimento de Excelência</h2>
+        <div class="grid-servicos">
+            
+            <div class="card">
+                <h3>Churrasqueiro</h3>
+                <p>Cortes nobres preparados com técnica, controle de ponto e braseiro perfeito. Cuidamos de todo o buffet de carnes para você aproveitar a festa.</p>
+            </div>
+
+            <div class="card">
+                <h3>Barman Profissional</h3>
+                <p><strong>Drinks inclusos no serviço:</strong></p>
+                <ul class="lista-drinks">
+                    <li>Caipirinhas de Frutas</li>
+                    <li>Caipivodka de Frutas</li>
+                    <li>Sex on the Beach</li>
+                    <li>Pina Colada</li>
+                    <li>Aperol Spritz</li>
+                    <li>Lagoa Azul</li>
+                    <li>Mojito</li>
+                    <li>GIN tônica de limão</li>
+                </ul>
+                <p>Levamos o Kit Barman completo e lindas saladeiras decorativas para frutas (limão, morango, abacaxi, etc).</p>
+            </div>
+
+            <div class="card">
+                <h3>Evento Completo</h3>
+                <p>A solução ideal para festas, casamentos e aniversários. Atendemos todo o Rio de Janeiro e Jacarepaguá.</p>
+                <div class="cortesia-box">
+                    <strong>De Cortesia eu levo:</strong><br>
+                    Rechaud, utensílios de guarnição, pratos, talheres, toalhas de mesa, porta-guardanapos e bandejas para garçons.
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <div class="social-section">
+        <p style="margin-bottom: 15px; font-size: 0.9rem; opacity: 0.7;">Siga nosso trabalho no Instagram:</p>
+        <a href="https://www.instagram.com/brasaschurrasqueiro?igsh=cG5ienZhdHRrOGxv&utm_source=qr" class="insta-link" target="_blank">
+            @brasaschurrasqueiro
+        </a>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Brasas Churrasqueiro & Barman</p>
+        <p style="color: var(--cor-secundaria); font-size: 0.9rem;">Rio de Janeiro - Jacarepaguá</p>
+    </footer>
+
+    <a href="https://wa.me/5521971516114" class="whatsapp-float" target="_blank">
+        <span>WhatsApp</span>
+    </a>
+
+</body>
+</html>
