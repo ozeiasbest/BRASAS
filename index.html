@@ -128,7 +128,7 @@
 
         .btn:hover { background-color: #b91d2a; transform: scale(1.05); }
 
-        .servicos { padding: 100px 20px; max-width: 1200px; margin: 0 auto; text-align: center; }
+        .servicos { padding: 100px 20px 50px; max-width: 1200px; margin: 0 auto; text-align: center; }
 
         .servicos h2 {
             font-family: 'Oswald', sans-serif; font-size: 2.5rem; margin-bottom: 50px;
@@ -159,6 +159,14 @@
 
         .card p { font-size: 0.95rem; color: #ddd; margin-bottom: 10px; }
 
+        .lista-churrasco {
+            list-style: none;
+            margin: 10px 0 20px;
+            font-size: 0.95rem;
+        }
+
+        .lista-churrasco li { margin-bottom: 5px; }
+
         .lista-drinks {
             list-style: none;
             margin-bottom: 15px;
@@ -181,6 +189,67 @@
             border-top: 1px solid rgba(255,255,255,0.1);
             font-style: italic;
             color: var(--cor-secundaria) !important;
+        }
+
+        /* Estilos da Seção Como Funciona */
+        .como-funciona {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .como-funciona h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            color: var(--cor-primaria);
+        }
+
+        .passos-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .passo {
+            flex: 1;
+            min-width: 280px;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 30px;
+            border-radius: 15px;
+            border-bottom: 3px solid var(--cor-secundaria);
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .passo:hover {
+            background: rgba(255, 255, 255, 0.07);
+            transform: translateY(-5px);
+        }
+
+        .passo-numero {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: var(--cor-primaria);
+            display: block;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .passo h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.4rem;
+            color: var(--cor-secundaria);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .passo p {
+            font-size: 0.95rem;
+            color: #ccc;
         }
 
         .social-section {
@@ -227,6 +296,7 @@
             .contatos-header { font-size: 0.7rem; }
             .whatsapp-float { bottom: 20px; right: 20px; padding: 12px 20px; font-size: 0.9rem; }
             .lista-drinks { grid-template-columns: 1fr; }
+            .passo { min-width: 100%; }
         }
     </style>
 </head>
@@ -242,8 +312,7 @@
                 <div class="logo-texto">BRASAS | <span>Churrasqueiro & Barman</span></div>
             </div>
             <div class="contatos-header">
-                (21) 97151-6114<br>
-                
+                (21) 97151-6114
             </div>
         </nav>
     </header>
@@ -261,12 +330,13 @@
             <div class="card">
                 <h3>Churrasqueiro</h3>
                 <p>Cortes nobres preparados com técnica, controle de ponto e braseiro perfeito. Cuidamos de todo o buffet de carnes para você aproveitar a festa.</p>
-         <li> 🥩 Carne mal passada </li>
-         <li> 🍖 Carne ao ponto  </li>
-         <li> 🔥 Carne passada </li>
-         <li> 🔪 Cliente que manda !</li>
-            
-             </div>
+                <ul class="lista-churrasco">
+                    <li>🥩 Carne mal passada</li>
+                    <li>🍖 Carne ao ponto</li>
+                    <li>🔥 Carne passada</li>
+                    <li>🔪 Cliente que manda!</li>
+                </ul>
+            </div>
 
             <div class="card">
                 <h3>Barman Profissional</h3>
@@ -281,18 +351,41 @@
                     <li>Mojito</li>
                     <li>GIN tônica de limão</li>
                 </ul>
-                <p>Levamos o Kit Barman completo e lindas saladeiras decorativas para frutas (limão, morango, abacaxi, etc).</p>
+                <p>Levamos o Kit Barman completo e lindas saladeiras decorativas para frutas.</p>
             </div>
 
             <div class="card">
                 <h3>Evento Completo</h3>
                 <p>A solução ideal para festas, casamentos e aniversários. Atendemos todo o Rio de Janeiro e Jacarepaguá.</p>
                 <div class="cortesia-box">
-                    <strong>🥗🍚🥄🍴🍽️ # De Cortesia eu levo:</strong><br>
-                    Rechaud, utensílios de guarnição, pratos, talheres, toalhas de mesa, porta-guardanapos e bandejas para garçons.
+                    <strong>🥗 # De Cortesia eu levo:</strong><br>
+                    Rechaud, utensílios de guarnição, pratos, talheres, toalhas de mesa e bandejas.
                 </div>
             </div>
             
+        </div>
+    </section>
+
+    <section class="como-funciona">
+        <h2>Como Funciona</h2>
+        <div class="passos-container">
+            <div class="passo">
+                <span class="passo-numero">01</span>
+                <h4>Consultoria</h4>
+                <p> "Entramos em contato para definir: dia, hora, local e número de pessoas" </p>
+            </div>
+            
+            <div class="passo">
+                <span class="passo-numero">02</span>
+                <h4>Lista de Insumos</h4>
+                <p>Enviamos a lista exata do que você precisa comprar “ trabalhamos 5 horas de evento” </p>
+            </div>
+            
+            <div class="passo">
+                <span class="passo-numero">03</span>
+                <h4>O Evento</h4>
+                <p>Nossa equipe chega com antecedência para montar toda a estrutura. Você só aproveita!</p>
+            </div>
         </div>
     </section>
 
