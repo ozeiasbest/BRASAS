@@ -6,16 +6,14 @@
     
     <title>Brasas | Churrasqueiro & Barman no Rio de Janeiro</title>
 
-    <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/ozeiasbest/BRASAS/refs/heads/projetoapp/LOGO.jpeg">
-<link rel="icon" type="image/x-icon" href="https://ozeiasbest.github.io/BRASAS/LOGO.jpeg">
-
-    
-    
+    <link rel="icon" type="image/x-icon" href="https://ozeiasbest.github.io/BRASAS/LOGO.jpeg">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --cor-primaria: #e63946; 
             --cor-secundaria: #f4a261; 
+            --cor-laranja-brasa: #ff4500;
             --cor-texto: #ffffff;
             --overlay-preto: rgba(0, 0, 0, 0.75);
         }
@@ -144,7 +142,7 @@
 
         .grid-servicos {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
         }
 
@@ -166,120 +164,113 @@
 
         .card p { font-size: 0.95rem; color: #ddd; margin-bottom: 10px; }
 
-        .lista-churrasco {
-            list-style: none;
-            margin: 10px 0 20px;
-            font-size: 0.95rem;
-        }
-
-        .lista-churrasco li { margin-bottom: 5px; }
+        .lista-churrasco { list-style: none; margin: 10px 0 20px; font-size: 0.95rem; }
+        .lista-churrasco li { margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
 
         .lista-drinks {
-            list-style: none;
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5px;
-            color: #eee;
+            list-style: none; margin-bottom: 15px; font-size: 0.9rem;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 5px; color: #eee;
         }
-
-        .lista-drinks li::before {
-            content: "🔥";
-            margin-right: 8px;
-            font-size: 0.8rem;
-        }
+        .lista-drinks li::before { content: "🔥"; margin-right: 8px; font-size: 0.8rem; }
 
         .cortesia-box {
-            margin-top: auto;
-            padding-top: 15px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-style: italic;
-            color: var(--cor-secundaria) !important;
+            margin-top: auto; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1);
+            font-style: italic; color: var(--cor-secundaria) !important;
         }
 
-        /* Estilos da Seção Como Funciona */
-        .como-funciona {
-            padding: 80px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
+        /* Como Funciona */
+        .como-funciona { padding: 80px 20px; max-width: 1200px; margin: 0 auto; text-align: center; }
+        .como-funciona h2 { font-family: 'Oswald', sans-serif; font-size: 2.5rem; margin-bottom: 40px; text-transform: uppercase; color: var(--cor-primaria); }
+        .passos-container { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; }
+        .passo { flex: 1; min-width: 280px; background: rgba(255, 255, 255, 0.03); padding: 30px; border-radius: 15px; border-bottom: 3px solid var(--cor-secundaria); transition: 0.3s; text-align: center; }
+        .passo-numero { font-family: 'Oswald', sans-serif; font-size: 3rem; color: var(--cor-primaria); display: block; margin-bottom: 10px; }
+        .passo h4 { font-family: 'Oswald', sans-serif; font-size: 1.4rem; color: var(--cor-secundaria); margin-bottom: 10px; text-transform: uppercase; }
+
+        /* Carrossel */
+        .fotos { text-align: center; padding: 60px 20px; }
+        .carrossel { position: relative; overflow: hidden; max-width: 500px; margin: 0 auto; border-radius: 15px; border: 2px solid #333; }
+        .carrossel-track { display: flex; transition: transform 0.5s ease; }
+        .carrossel-track img { min-width: 100%; height: 350px; object-fit: cover; }
+        .prev, .next { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.6); color: white; border: none; padding: 12px; cursor: pointer; z-index: 10; border-radius: 50%; }
+        .prev { left: 10px; } .next { right: 10px; }
+
+        /* ESTILO FAQ REFINADO */
+        .faq-container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 20px 15px; 
+            font-family: 'Roboto', sans-serif;
+            background-color: transparent;
+        }
+
+        .faq-container h2 {
             text-align: center;
-        }
-
-        .como-funciona h2 {
+            color: var(--cor-laranja-brasa);
             font-family: 'Oswald', sans-serif;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             margin-bottom: 40px;
             text-transform: uppercase;
-            color: var(--cor-primaria);
         }
 
-        .passos-container {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .passo {
-            flex: 1;
-            min-width: 280px;
-            background: rgba(255, 255, 255, 0.03);
-            padding: 30px;
-            border-radius: 15px;
-            border-bottom: 3px solid var(--cor-secundaria);
-            transition: 0.3s;
-            text-align: center;
-        }
-
-        .passo:hover {
-            background: rgba(255, 255, 255, 0.07);
-            transform: translateY(-5px);
-        }
-
-        .passo-numero {
-            font-family: 'Oswald', sans-serif;
-            font-size: 3rem;
-            color: var(--cor-primaria);
-            display: block;
-            margin-bottom: 10px;
-            line-height: 1;
-        }
-
-        .passo h4 {
+        .faq-category { margin-bottom: 50px; }
+        .faq-category h3 {
+            color: #ffbb00;
+            border-left: 4px solid var(--cor-laranja-brasa);
+            padding-left: 15px;
+            margin-bottom: 25px;
             font-family: 'Oswald', sans-serif;
             font-size: 1.4rem;
-            color: var(--cor-secundaria);
-            margin-bottom: 10px;
-            text-transform: uppercase;
         }
 
-        .passo p {
-            font-size: 0.95rem;
-            color: #ccc;
-        }
-
-        .social-section {
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        .insta-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: #fff;
-            text-decoration: none;
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-            padding: 12px 25px;
-            border-radius: 30px;
-            font-weight: bold;
+        details {
+            background: rgba(26, 26, 26, 0.8);
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #333;
+            overflow: hidden;
             transition: 0.3s;
         }
 
-        .insta-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(220, 39, 67, 0.4);
+        details[open] { border-color: var(--cor-laranja-brasa); background: #111; }
+
+        summary {
+            padding: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+
+        summary::after { content: '▼'; font-size: 0.7rem; color: var(--cor-laranja-brasa); transition: 0.3s; }
+        details[open] summary::after { transform: rotate(180deg); }
+
+        .faq-content {
+            padding: 0 18px 20px 18px;
+            line-height: 1.7;
+            color: #ccc;
+            font-size: 1rem;
+        }
+
+        .faq-content ul { padding-left: 20px; margin: 10px 0; }
+        .faq-content li { margin-bottom: 8px; color: #ffbb00; }
+        .faq-content li span { color: #ccc; }
+        .highlight { color: #fff; font-weight: bold; }
+
+        .dica-box {
+            margin-top: 15px; padding: 12px;
+            background: rgba(255, 69, 0, 0.1);
+            border-radius: 5px; border-left: 3px solid var(--cor-laranja-brasa);
+        }
+
+        /* Rodapé e Social */
+        .social-section { padding: 40px 20px; text-align: center; }
+        .insta-link {
+            display: inline-flex; align-items: center; gap: 10px; color: #fff; text-decoration: none;
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            padding: 12px 25px; border-radius: 30px; font-weight: bold; transition: 0.3s;
         }
 
         .whatsapp-float {
@@ -289,21 +280,16 @@
             display: flex; align-items: center; gap: 10px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.5);
             z-index: 1001; text-decoration: none; font-weight: bold;
-            transition: 0.3s;
         }
 
-        footer {
-            padding: 40px 20px; text-align: center;
-            background-color: #000; border-top: 1px solid #222;
-        }
+        footer { padding: 40px 20px; text-align: center; background-color: #000; border-top: 1px solid #222; }
 
         @media (max-width: 768px) {
-            header { padding: 0.6rem; }
-            .logo-img-top { height: 35px; }
-            .contatos-header { font-size: 0.7rem; }
-            .whatsapp-float { bottom: 20px; right: 20px; padding: 12px 20px; font-size: 0.9rem; }
+            .logo-texto { font-size: 1rem; }
+            .carrossel { max-width: 90%; }
+            .carrossel-track img { height: 250px; }
+            .faq-container h2 { font-size: 1.8rem; }
             .lista-drinks { grid-template-columns: 1fr; }
-            .passo { min-width: 100%; }
         }
     </style>
 </head>
@@ -318,9 +304,7 @@
                 <img src="https://raw.githubusercontent.com/ozeiasbest/BRASAS/refs/heads/projetoapp/LOGO.jpeg" alt="Logo Brasas" class="logo-img-top">
                 <div class="logo-texto">BRASAS | <span>Churrasqueiro & Barman</span></div>
             </div>
-            <div class="contatos-header">
-                (21) 97151-6114
-            </div>
+            <div class="contatos-header">(21) 97151-6114</div>
         </nav>
     </header>
 
@@ -333,43 +317,49 @@
     <section class="servicos">
         <h2>Atendimento de Excelência</h2>
         <div class="grid-servicos">
-            
             <div class="card">
                 <h3>Churrasqueiro</h3>
-                <p>Cortes nobres preparados com técnica, controle de ponto e braseiro perfeito. Cuidamos de todo o buffet de carnes para você aproveitar a festa.</p>
+                <p>Cortes nobres preparados com técnica e braseiro perfeito. Atendemos ao seu gosto:</p>
                 <ul class="lista-churrasco">
-                    <li>🥩 Carne mal passada</li>
-                    <li>🍖 Carne ao ponto</li>
-                    <li>🔥 Carne passada</li>
-                    <li>🔪 “Ponto personalizado a gosto”</li>
+                    <li>🔥 <span>Carne mal passada</span></li>
+                    <li>🔥 <span>Carne ao ponto</span></li>
+                    <li>🔥 <span>Carne passada</span></li>
+                    <li>🔪 <span>Corte especializado ao gosto do cliente </span></li>
                 </ul>
             </div>
 
             <div class="card">
                 <h3>Barman Profissional</h3>
-                <p><strong>Drinks inclusos no serviço:</strong></p>
                 <ul class="lista-drinks">
-                    <li>Caipirinhas de Frutas</li>
-                    <li>Caipivodka de Frutas</li>
-                    <li>Sex on the Beach</li>
-                    <li>Pina Colada</li>
-                    <li>Aperol Spritz</li>
-                    <li>Lagoa Azul</li>
-                    <li>Mojito</li>
-                    <li>GIN tônica de limão</li>
+                    <li>Caipirinhas</li><li>Caipivodkas</li><li>Sex on the Beach</li><li>Pina Colada</li>
+                    <li>Aperol Spritz</li><li>Lagoa Azul</li><li>Mojito</li><li>Gin Tônica</li>
                 </ul>
-                <p>Levamos o Kit Barman completo e lindas saladeiras decorativas para frutas.</p>
+                <p>Levamos o Kit Barman completo e saladeiras decorativas.</p>
             </div>
 
             <div class="card">
                 <h3>Evento Completo</h3>
-                <p>A solução ideal para festas, casamentos e aniversários. Atendemos todo o Rio de Janeiro e Jacarepaguá.</p>
+                <p>A solução ideal para festas e casamentos em todo o Rio.</p>
                 <div class="cortesia-box">
                     <strong>🥗 # De Cortesia eu levo:</strong><br>
-                    Rechaud, utensílios de guarnição, pratos, talheres, toalhas de mesa e bandejas.
+                    Rechaud, utensílios, pratos, talheres, toalhas e bandejas.
                 </div>
             </div>
-            
+        </div>
+    </section>
+
+    <section class="fotos">
+        <h2>BRASAS EM AÇÃO</h2>
+        <div class="carrossel">
+            <button class="prev" onclick="moverCarrossel(-1)">&#10094;</button>
+            <div class="carrossel-track">
+                <img src="https://raw.githubusercontent.com/ozeiasbest/BRASAS/refs/heads/projetoapp/1.PNG" alt="Churrasco">
+                <img src="https://raw.githubusercontent.com/ozeiasbest/BRASAS/refs/heads/projetoapp/2.jpg" alt="Cortes">
+                <img src="https://raw.githubusercontent.com/ozeiasbest/BRASAS/refs/heads/projetoapp/3.jpg" alt="Drinks">
+                <img src="https://raw.githubusercontent.com/ozeiasbest/BRASAS/refs/heads/projetoapp/4.jpg" alt="Buffet">
+                <img src="https://raw.githubusercontent.com/ozeiasbest/BRASAS/refs/heads/projetoapp/5.jpg" alt="Equipe">
+            </div>
+            <button class="next" onclick="moverCarrossel(1)">&#10095;</button>
         </div>
     </section>
 
@@ -379,275 +369,68 @@
             <div class="passo">
                 <span class="passo-numero">01</span>
                 <h4>Consultoria</h4>
-                <p>📝 "Entramos em contato para definir: Dia, Hora, Local e Número de pessoas" </p>
+                <p>Definimos juntos o cardápio, data, horário e logística do seu evento.</p>
             </div>
-            
             <div class="passo">
                 <span class="passo-numero">02</span>
-                <h4>Lista de Insumos</h4>
-                <p>Enviamos a lista exata do que você precisa comprar ( caso precise ) 
-                     </p> 
-                   <p> “ trabalhamos 5 horas de evento”</p>
-                    
-                    
+                <h4>Planejamento</h4>
+                <p>( CASO PRECISE ) Enviamos a lista exata de insumos para 5 horas de evento.</p>
             </div>
-            
             <div class="passo">
                 <span class="passo-numero">03</span>
                 <h4>O Evento</h4>
-                <p>Nossa equipe chega com antecedência para montar toda a estrutura. Você só aproveita!</p>
+                <p>Chegamos com antecedência e organizamos tudo, para que você só tenha o trabalho de aproveitar!</p>
             </div>
         </div>
     </section>
 
+    <div class="faq-container">
+        <h2>Dúvidas Frequentes</h2>
 
+        <div class="faq-category">
+            <h3>🥩 Serviço de Churrasqueiro: </h3>
+            <details>
+                <summary>O que está incluso na contratação?</summary>
+                <div class="faq-content">
+                    <p>Garantimos <span class="highlight">5 horas de serviço especializado</span> e levamos como <strong>cortesia</strong>:</p>
+                    <ul>
+                        <li><span>Rechauds e utensílios de guarnição</span></li>
+                        <li><span>Pratos, talheres, toalhas e bandejas</span></li>
+                    </ul>
+                </div>
+            </details>
+            <details>
+                <summary>Quem fornece as carnes e o carvão?</summary>
+                <div class="faq-content">
+                    <p>Os insumos ficam por conta do cliente, garantindo sua liberdade de escolha.</p>
+                    <div class="dica-box">💡 Eu te ajudo com a lista de quantidades exatas!</div>
+                </div>
+            </details>
+        </div>
 
-
-
-<!-- SEÇÃO DE FOTOS -->
-<section class="fotos">
-  <h2>BRASAS</h2>
-  <div class="carrossel">
-    <button class="prev" onclick="moverCarrossel(-1)">&#10094;</button>
-    <div class="carrossel-track">
-
-      <img src="https://raw.githubusercontent.com/ozeiasbest/BRASAS/refs/heads/projetoapp/1.PNG" alt="Churrasco na brasa">
-
-      <img src="https://raw.githubusercontent.com/ozeiasbest/BRASAS/refs/heads/projetoapp/2.jpg" alt="Cortes nobres">
-
-      <img src="https://raw.githubusercontent.com/ozeiasbest/BRASAS/refs/heads/projetoapp/3.jpg" alt="Drinks e coquetéis">
-
-      <img src="https://raw.githubusercontent.com/ozeiasbest/BRASAS/refs/heads/projetoapp/4.jpg" alt="Evento completo">
-
-    <img src="https://raw.githubusercontent.com/ozeiasbest/BRASAS/refs/heads/projetoapp/5.jpg" alt="BRASAS">
-
+        <div class="faq-category">
+            <h3>🍸 Serviço de Barman: </h3>
+            <details>
+                <summary>Quais os drinks do cardápio?</summary>
+                <div class="faq-content">
+                    <ul>
+                        <li><span class="highlight">Clássicos:</span> <span>Caipirinhas, Gin Tônica e Mojito.</span></li>
+                        <li><span class="highlight">Tropicais:</span> <span>Sex on the Beach, Piña Colada e Lagoa Azul.</span></li>
+                    </ul>
+                </div>
+            </details>
+            <details>
+                <summary>Qual a duração do serviço?</summary>
+                <div class="faq-content">
+                    <p>Nossos pacotes padrão são de <span class="highlight">4 ou 5 horas</span>, ajustáveis ao seu evento.</p>
+                </div>
+            </details>
+        </div>
     </div>
-    <button class="next" onclick="moverCarrossel(1)">&#10095;</button>
-  </div>
-</section>
-
-<style>
-.fotos { text-align: center; padding: 30px 20px; }
-.fotos h2 { margin-bottom: 16px; }
-.carrossel { position: relative; overflow: hidden; max-width: 400px; margin: 0 auto; border-radius: 10px; }
-.carrossel-track { display: flex; transition: transform 0.5s ease; }
-.carrossel-track img { min-width: 100%; height: 200px; object-fit: cover; }
-.prev, .next { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.45); color: white; border: none; padding: 8px 12px; cursor: pointer; z-index: 10; border-radius: 4px; font-size: 16px; }
-.prev { left: 6px; }
-.next { right: 6px; }
-</style>
-
-<script>
-let atual = 0;
-const fotos = document.querySelectorAll('.carrossel-track img');
-
-function moverCarrossel(dir) {
-  atual = (atual + dir + fotos.length) % fotos.length;
-  document.querySelector('.carrossel-track').style.transform = `translateX(-${atual * 100}%)`;
-}
-
-// Automático a cada 3 segundos
-setInterval(() => moverCarrossel(1), 3000);
-</script>
-
-
-
-
-
-
-
 
     <div class="social-section">
-        <p style="margin-bottom: 15px; font-size: 0.9rem; opacity: 0.7;">Siga nosso trabalho no Instagram:</p>
-        <a href="https://www.instagram.com/brasaschurrasqueiro?igsh=cG5ienZhdHRrOGxv&utm_source=qr" class="insta-link" target="_blank">
-            @brasaschurrasqueiro
-        </a>
+        <a href="https://www.instagram.com/brasaschurrasqueiro" class="insta-link" target="_blank">@brasaschurrasqueiro</a>
     </div>
-
-
-
-
-
-
-<!-- Início da Seção FAQ BRASAS -->
-<style>
-    .faq-container {
-        max-width: 900px;
-        margin: 40px auto;
-        padding: 20px;
-        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        background-color: #000; /* Fundo preto para combinar com o site */
-        color: #eee;
-    }
-
-    .faq-container h2 {
-        text-align: center;
-        color: #ff4500; /* Laranja Brasa */
-        font-size: 2rem;
-        margin-bottom: 30px;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-    }
-
-    .faq-category {
-        margin-bottom: 40px;
-    }
-
-    .faq-category h3 {
-        color: #ffbb00; /* Amarelo Ouro para subtemas */
-        border-left: 4px solid #ff4500;
-        padding-left: 15px;
-        margin-bottom: 20px;
-        font-size: 1.4rem;
-    }
-
-    details {
-        background: #1a1a1a;
-        margin-bottom: 12px;
-        border-radius: 8px;
-        border: 1px solid #333;
-        overflow: hidden;
-        transition: all 0.3s ease;
-    }
-
-    details[open] {
-        border-color: #ff4500;
-        background: #222;
-    }
-
-    summary {
-        padding: 18px;
-        font-weight: 600;
-        cursor: pointer;
-        list-style: none;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        outline: none;
-        user-select: none;
-    }
-
-    summary::after {
-        content: '▼';
-        font-size: 0.8rem;
-        color: #ff4500;
-        transition: transform 0.3s ease;
-    }
-
-    details[open] summary::after {
-        transform: rotate(180deg);
-    }
-
-    summary:hover {
-        background-color: #262626;
-    }
-
-    .faq-content {
-        padding: 0 18px 18px 18px;
-        line-height: 1.7;
-        color: #ccc;
-        font-size: 1.05rem;
-    }
-
-    .faq-content ul {
-        margin: 10px 0;
-        padding-left: 20px;
-    }
-
-    .faq-content li {
-        margin-bottom: 8px;
-        list-style-type: square;
-        color: #ffbb00;
-    }
-
-    .faq-content li span {
-        color: #ccc; /* Cor do texto dentro da lista */
-    }
-
-    .highlight {
-        color: #fff;
-        font-weight: bold;
-    }
-
-    .dica-box {
-        margin-top: 15px;
-        padding: 10px;
-        background: rgba(255, 69, 0, 0.1);
-        border-radius: 5px;
-        border-left: 3px solid #ff4500;
-    }
-</style>
-
-<div class="faq-container">
-    <h2>Dúvidas Frequentes (FAQ)</h2>
-
-    <!-- Seção Churrasco -->
-    <div class="faq-category">
-        <h3>🥩 Sobre o Serviço de Churrasco</h3>
-        
-        <details>
-            <summary>O que está incluso na contratação do churrasqueiro?</summary>
-            <div class="faq-content">
-                <p>A contratação garante <span class="highlight">5 horas de serviço especializado</span>. Para sua comodidade e para garantir a estética do evento, oferecemos como <strong>cortesia exclusiva</strong> o uso de nossos materiais profissionais:</p>
-                <ul>
-                    <li><span>Rechauds e utensílios de guarnição;</span></li>
-                    <li><span>Pratos, talheres e pegadores;</span></li>
-                    <li><span>Toalhas de mesa e bandejas de garçom.</span></li>
-                </ul>
-            </div>
-        </details>
-
-        <details>
-            <summary>Quem fornece os insumos (carnes, carvão e acompanhamentos)?</summary>
-            <div class="faq-content">
-                <p>Para que você tenha total liberdade de escolha nas marcas e cortes de sua preferência, os insumos ficam por conta do cliente.</p>
-                <div class="dica-box">
-                    <strong>💡 Dica:</strong> Posso te ajudar com uma lista de quantidades sugeridas para evitar desperdícios no seu evento!
-                </div>
-            </div>
-        </details>
-    </div>
-
-    <!-- Seção Barman -->
-    <div class="faq-category">
-        <h3>🍸 Sobre o Serviço de Barman</h3>
-
-        <details>
-            <summary>Quais drinks estão inclusos no cardápio?</summary>
-            <div class="faq-content">
-                <p>Trabalhamos com uma carta selecionada que agrada a todos os paladares, com opções com ou sem álcool:</p>
-                <ul>
-                    <li><span class="highlight">Clássicos:</span> <span>Caipirinhas e Caipivodkas de frutas, Gin Tônica de Limão e Mojito.</span></li>
-                    <li><span class="highlight">Tropicais:</span> <span>Sex on the Beach, Piña Colada e Lagoa Azul.</span></li>
-                    <li><span class="highlight">Especiais:</span> <span>Aperol Spritz.</span></li>
-                </ul>
-            </div>
-        </details>
-
-        <details>
-            <summary>Quem fornece as bebidas alcoólicas e as frutas?</summary>
-            <div class="faq-content">
-                <p>O fornecimento dos ingredientes é de responsabilidade do cliente. Isso garante que as bebidas sejam exatamente do seu gosto e dentro do seu orçamento.</p>
-            </div>
-        </details>
-
-        <details>
-            <summary>Quanto tempo dura o serviço de bar?</summary>
-            <div class="faq-content">
-                <p>Nossos pacotes padrão são de <span class="highlight">4 ou 5 horas</span> de evento, podendo ser ajustados conforme a necessidade da sua festa.</p>
-            </div>
-        </details>
-    </div>
-</div>
-<!-- Fim da Seção FAQ BRASAS -->
-
-
-
-
-
-
-
-
 
     <footer>
         <p>&copy; 2026 Brasas Churrasqueiro & Barman</p>
@@ -658,5 +441,17 @@ setInterval(() => moverCarrossel(1), 3000);
         <span>WhatsApp</span>
     </a>
 
+    <script>
+        let atual = 0;
+        const track = document.querySelector('.carrossel-track');
+        const fotos = document.querySelectorAll('.carrossel-track img');
+
+        function moverCarrossel(dir) {
+            atual = (atual + dir + fotos.length) % fotos.length;
+            track.style.transform = `translateX(-${atual * 100}%)`;
+        }
+
+        setInterval(() => moverCarrossel(1), 4000);
+    </script>
 </body>
 </html>
