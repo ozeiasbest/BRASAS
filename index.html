@@ -400,6 +400,63 @@
         </div>
     </section>
 
+
+
+
+
+<!-- SEÇÃO DE FOTOS -->
+<section class="fotos">
+  <h2>Nosso Trabalho</h2>
+  <div class="carrossel">
+    <button class="prev" onclick="moverCarrossel(-1)">&#10094;</button>
+    <div class="carrossel-track">
+
+      <img src="https://raw.githubusercontent.com/ozeiasbest/BRASAS/refs/heads/projetoapp/1.jpg" alt="Churrasco na brasa">
+
+      <img src="https://raw.githubusercontent.com/ozeiasbest/BRASAS/refs/heads/projetoapp/2.jpg" alt="Cortes nobres">
+
+      <img src="https://raw.githubusercontent.com/ozeiasbest/BRASAS/refs/heads/projetoapp/3.jpg" alt="Drinks e coquetéis">
+
+      <img src="https://raw.githubusercontent.com/ozeiasbest/BRASAS/refs/heads/projetoapp/4.jpg" alt="Evento completo">
+
+    <img src="https://raw.githubusercontent.com/ozeiasbest/BRASAS/refs/heads/projetoapp/5.jpg" alt="BRASAS">
+
+    </div>
+    <button class="next" onclick="moverCarrossel(1)">&#10095;</button>
+  </div>
+</section>
+
+<style>
+.fotos { text-align: center; padding: 30px 20px; }
+.fotos h2 { margin-bottom: 16px; }
+.carrossel { position: relative; overflow: hidden; max-width: 400px; margin: 0 auto; border-radius: 10px; }
+.carrossel-track { display: flex; transition: transform 0.5s ease; }
+.carrossel-track img { min-width: 100%; height: 200px; object-fit: cover; }
+.prev, .next { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.45); color: white; border: none; padding: 8px 12px; cursor: pointer; z-index: 10; border-radius: 4px; font-size: 16px; }
+.prev { left: 6px; }
+.next { right: 6px; }
+</style>
+
+<script>
+let atual = 0;
+const fotos = document.querySelectorAll('.carrossel-track img');
+
+function moverCarrossel(dir) {
+  atual = (atual + dir + fotos.length) % fotos.length;
+  document.querySelector('.carrossel-track').style.transform = `translateX(-${atual * 100}%)`;
+}
+
+// Automático a cada 3 segundos
+setInterval(() => moverCarrossel(1), 3000);
+</script>
+
+
+
+
+
+
+
+
     <div class="social-section">
         <p style="margin-bottom: 15px; font-size: 0.9rem; opacity: 0.7;">Siga nosso trabalho no Instagram:</p>
         <a href="https://www.instagram.com/brasaschurrasqueiro?igsh=cG5ienZhdHRrOGxv&utm_source=qr" class="insta-link" target="_blank">
