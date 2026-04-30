@@ -178,14 +178,6 @@
             font-style: italic; color: var(--cor-secundaria) !important;
         }
 
-        /* Como Funciona */
-        .como-funciona { padding: 80px 20px; max-width: 1200px; margin: 0 auto; text-align: center; }
-        .como-funciona h2 { font-family: 'Oswald', sans-serif; font-size: 2.5rem; margin-bottom: 40px; text-transform: uppercase; color: var(--cor-primaria); }
-        .passos-container { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; }
-        .passo { flex: 1; min-width: 280px; background: rgba(255, 255, 255, 0.03); padding: 30px; border-radius: 15px; border-bottom: 3px solid var(--cor-secundaria); transition: 0.3s; text-align: center; }
-        .passo-numero { font-family: 'Oswald', sans-serif; font-size: 3rem; color: var(--cor-primaria); display: block; margin-bottom: 10px; }
-        .passo h4 { font-family: 'Oswald', sans-serif; font-size: 1.4rem; color: var(--cor-secundaria); margin-bottom: 10px; text-transform: uppercase; }
-
         /* Carrossel */
         .fotos { text-align: center; padding: 60px 20px; }
         .carrossel { position: relative; overflow: hidden; max-width: 500px; margin: 0 auto; border-radius: 15px; border: 2px solid #333; }
@@ -194,94 +186,32 @@
         .prev, .next { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.6); color: white; border: none; padding: 12px; cursor: pointer; z-index: 10; border-radius: 50%; }
         .prev { left: 10px; } .next { right: 10px; }
 
-        /* ESTILO FAQ REFINADO */
-        .faq-container {
-            max-width: 900px;
-            margin: 60px auto;
-            padding: 20px 15px; 
-            font-family: 'Roboto', sans-serif;
-            background-color: transparent;
-        }
+        /* Como Funciona */
+        .como-funciona { padding: 80px 20px; max-width: 1200px; margin: 0 auto; text-align: center; }
+        .como-funciona h2 { font-family: 'Oswald', sans-serif; font-size: 2.5rem; margin-bottom: 40px; text-transform: uppercase; color: var(--cor-primaria); }
+        .passos-container { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; }
+        .passo { flex: 1; min-width: 280px; background: rgba(255, 255, 255, 0.03); padding: 30px; border-radius: 15px; border-bottom: 3px solid var(--cor-secundaria); transition: 0.3s; text-align: center; }
+        .passo-numero { font-family: 'Oswald', sans-serif; font-size: 3rem; color: var(--cor-primaria); display: block; margin-bottom: 10px; }
+        .passo h4 { font-family: 'Oswald', sans-serif; font-size: 1.4rem; color: var(--cor-secundaria); margin-bottom: 10px; text-transform: uppercase; }
 
-        .faq-container h2 {
-            text-align: center;
-            color: var(--cor-laranja-brasa);
-            font-family: 'Oswald', sans-serif;
-            font-size: 2.2rem;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-        }
-
+        /* FAQ */
+        .faq-container { max-width: 900px; margin: 60px auto; padding: 20px 15px; background-color: transparent; }
+        .faq-container h2 { text-align: center; color: var(--cor-laranja-brasa); font-family: 'Oswald', sans-serif; font-size: 2.2rem; margin-bottom: 40px; text-transform: uppercase; }
         .faq-category { margin-bottom: 50px; }
-        .faq-category h3 {
-            color: #ffbb00;
-            border-left: 4px solid var(--cor-laranja-brasa);
-            padding-left: 15px;
-            margin-bottom: 25px;
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.4rem;
-        }
-
-        details {
-            background: rgba(26, 26, 26, 0.8);
-            margin-bottom: 15px;
-            border-radius: 8px;
-            border: 1px solid #333;
-            overflow: hidden;
-            transition: 0.3s;
-        }
-
+        .faq-category h3 { color: #ffbb00; border-left: 4px solid var(--cor-laranja-brasa); padding-left: 15px; margin-bottom: 25px; font-family: 'Oswald', sans-serif; font-size: 1.4rem; }
+        details { background: rgba(26, 26, 26, 0.8); margin-bottom: 15px; border-radius: 8px; border: 1px solid #333; overflow: hidden; transition: 0.3s; }
         details[open] { border-color: var(--cor-laranja-brasa); background: #111; }
-
-        summary {
-            padding: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            user-select: none;
-        }
-
+        summary { padding: 18px; font-weight: bold; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; user-select: none; }
         summary::after { content: '▼'; font-size: 0.7rem; color: var(--cor-laranja-brasa); transition: 0.3s; }
         details[open] summary::after { transform: rotate(180deg); }
-
-        .faq-content {
-            padding: 0 18px 20px 18px;
-            line-height: 1.7;
-            color: #ccc;
-            font-size: 1rem;
-        }
-
-        .faq-content ul { padding-left: 20px; margin: 10px 0; }
-        .faq-content li { margin-bottom: 8px; color: #ffbb00; }
-        .faq-content li span { color: #ccc; }
+        .faq-content { padding: 0 18px 20px 18px; line-height: 1.7; color: #ccc; font-size: 1rem; }
         .highlight { color: #fff; font-weight: bold; }
-
-        .dica-box {
-            margin-top: 15px; padding: 12px;
-            background: rgba(255, 69, 0, 0.1);
-            border-radius: 5px; border-left: 3px solid var(--cor-laranja-brasa);
-        }
+        .dica-box { margin-top: 15px; padding: 12px; background: rgba(255, 69, 0, 0.1); border-radius: 5px; border-left: 3px solid var(--cor-laranja-brasa); }
 
         /* Rodapé e Social */
         .social-section { padding: 40px 20px; text-align: center; }
-        .insta-link {
-            display: inline-flex; align-items: center; gap: 10px; color: #fff; text-decoration: none;
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-            padding: 12px 25px; border-radius: 30px; font-weight: bold; transition: 0.3s;
-        }
-
-        .whatsapp-float {
-            position: fixed; bottom: 30px; right: 30px;
-            background-color: #25d366; color: white;
-            padding: 15px 25px; border-radius: 50px;
-            display: flex; align-items: center; gap: 10px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-            z-index: 1001; text-decoration: none; font-weight: bold;
-        }
-
+        .insta-link { display: inline-flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); padding: 12px 25px; border-radius: 30px; font-weight: bold; transition: 0.3s; }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: white; padding: 15px 25px; border-radius: 50px; display: flex; align-items: center; gap: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); z-index: 1001; text-decoration: none; font-weight: bold; }
         footer { padding: 40px 20px; text-align: center; background-color: #000; border-top: 1px solid #222; }
 
         @media (max-width: 768px) {
@@ -319,12 +249,12 @@
         <div class="grid-servicos">
             <div class="card">
                 <h3>Churrasqueiro</h3>
-                <p>Cortes nobres preparados com técnica e braseiro perfeito. Atendemos ao seu gosto:</p>
+                <p>Cortes nobres preparados com técnica e braseiro perfeito:</p>
                 <ul class="lista-churrasco">
                     <li>🔥 <span>Carne mal passada</span></li>
                     <li>🔥 <span>Carne ao ponto</span></li>
                     <li>🔥 <span>Carne passada</span></li>
-                    <li>🔪 <span>Corte especializado ao gosto do cliente </span></li>
+                    <li>🔪 <span>Corte especializado ao gosto do cliente</span></li>
                 </ul>
             </div>
 
@@ -361,7 +291,6 @@
                 <img src="https://raw.githubusercontent.com/ozeiasbest/BRASAS/refs/heads/projetoapp/6.jpg" alt="Equipe6">
                 <img src="https://raw.githubusercontent.com/ozeiasbest/BRASAS/refs/heads/projetoapp/7.jpg" alt="Equipe7">
                 <img src="https://raw.githubusercontent.com/ozeiasbest/BRASAS/refs/heads/projetoapp/10.jpg" alt="Equipe10">
-                
             </div>
             <button class="next" onclick="moverCarrossel(1)">&#10095;</button>
         </div>
@@ -378,55 +307,30 @@
             <div class="passo">
                 <span class="passo-numero">02</span>
                 <h4>Planejamento</h4>
-                <p>( CASO PRECISE ) Enviamos a lista exata de insumos para 5 horas de evento.</p>
+                <p>Enviamos a lista exata de insumos para 5 horas de evento.</p>
             </div>
             <div class="passo">
                 <span class="passo-numero">03</span>
                 <h4>O Evento</h4>
-                <p>Chegamos com antecedência e organizamos tudo, para que você só tenha o trabalho de aproveitar!</p>
+                <p>Chegamos com antecedência e organizamos tudo para você aproveitar!</p>
             </div>
         </div>
     </section>
 
     <div class="faq-container">
         <h2>Dúvidas Frequentes</h2>
-
         <div class="faq-category">
             <h3>🥩 Serviço de Churrasqueiro: </h3>
             <details>
                 <summary>O que está incluso na contratação?</summary>
                 <div class="faq-content">
-                    <p>Garantimos <span class="highlight">5 horas de serviço especializado</span> e levamos como <strong>cortesia</strong>:</p>
-                    <ul>
-                        <li><span>Rechauds e utensílios de guarnição</span></li>
-                        <li><span>Pratos, talheres, toalhas e bandejas</span></li>
-                    </ul>
+                    <p>Garantimos <span class="highlight">5 horas de serviço especializado</span> e levamos como <strong>cortesia</strong>: Rechauds, utensílios, pratos e talheres.</p>
                 </div>
             </details>
             <details>
-                <summary>Quem fornece as carnes e o carvão?</summary>
+                <summary>Quem fornece as carnes?</summary>
                 <div class="faq-content">
-                    <p>Os insumos ficam por conta do cliente, garantindo sua liberdade de escolha.</p>
-                    <div class="dica-box">💡 Eu te ajudo com a lista de quantidades exatas!</div>
-                </div>
-            </details>
-        </div>
-
-        <div class="faq-category">
-            <h3>🍸 Serviço de Barman: </h3>
-            <details>
-                <summary>Quais os drinks do cardápio?</summary>
-                <div class="faq-content">
-                    <ul>
-                        <li><span class="highlight">Clássicos:</span> <span>Caipirinhas, Gin Tônica e Mojito.</span></li>
-                        <li><span class="highlight">Tropicais:</span> <span>Sex on the Beach, Piña Colada e Lagoa Azul.</span></li>
-                    </ul>
-                </div>
-            </details>
-            <details>
-                <summary>Qual a duração do serviço?</summary>
-                <div class="faq-content">
-                    <p>Nossos pacotes padrão são de <span class="highlight">4 ou 5 horas</span>, ajustáveis ao seu evento.</p>
+                    <p>Os insumos ficam por conta do cliente. <span class="highlight">Eu ajudo com a lista de quantidades!</span></p>
                 </div>
             </details>
         </div>
@@ -455,12 +359,10 @@
             track.style.transform = `translateX(-${atual * 100}%)`;
         }
 
-
-
-
-
-
-
-    
+        // Passa as fotos automaticamente a cada 3 segundos
+        setInterval(() => {
+            moverCarrossel(1);
+        }, 3000);
+    </script>
 </body>
 </html>
