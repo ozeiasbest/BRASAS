@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Brasas | Churrasqueiro & Barman no Rio de Janeiro</title>
 
     <link rel="icon" type="image/x-icon" href="https://ozeiasbest.github.io/BRASAS/LOGO.jpeg">
@@ -15,7 +14,6 @@
             --cor-secundaria: #f4a261; 
             --cor-laranja-brasa: #ff4500;
             --cor-texto: #ffffff;
-            --overlay-preto: rgba(0, 0, 0, 0.75);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -28,6 +26,7 @@
             background-color: #000;
         }
 
+        /* Fundo */
         .fundo-pagina {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -45,6 +44,7 @@
             background: radial-gradient(circle, transparent 20%, #000 100%);
         }
 
+        /* Header */
         header {
             background-color: rgba(0, 0, 0, 0.95);
             padding: 0.8rem 1rem;
@@ -63,61 +63,15 @@
             align-items: center;
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo-img-top {
-            height: 45px;
-            width: auto;
-            border-radius: 5px;
-        }
-
-        .logo-texto {
-            font-family: 'Oswald', sans-serif;
-            font-size: clamp(0.9rem, 4vw, 1.3rem);
-            font-weight: bold;
-            color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            line-height: 1.2;
-        }
-
+        .logo-container { display: flex; align-items: center; gap: 12px; }
+        .logo-img-top { height: 45px; width: auto; border-radius: 5px; }
+        .logo-texto { font-family: 'Oswald', sans-serif; font-size: clamp(0.9rem, 4vw, 1.3rem); font-weight: bold; color: #fff; text-transform: uppercase; }
         .logo-texto span { color: var(--cor-primaria); }
 
-        .contatos-header {
-            text-align: right;
-            font-size: 0.8rem;
-            opacity: 0.9;
-            font-weight: bold;
-        }
-
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-        }
-
-        .hero h1 {
-            font-family: 'Oswald', sans-serif;
-            font-size: clamp(2.2rem, 7vw, 4rem);
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            color: var(--cor-secundaria);
-        }
-
-        .hero p {
-            font-size: clamp(1rem, 4vw, 1.3rem);
-            margin-bottom: 2.5rem;
-            max-width: 750px;
-            font-weight: 300;
-        }
+        /* Hero */
+        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; }
+        .hero h1 { font-family: 'Oswald', sans-serif; font-size: clamp(2.2rem, 7vw, 4rem); margin-bottom: 1rem; text-transform: uppercase; color: var(--cor-secundaria); }
+        .hero p { font-size: clamp(1rem, 4vw, 1.3rem); margin-bottom: 2.5rem; max-width: 750px; }
 
         .btn {
             background-color: var(--cor-primaria);
@@ -130,53 +84,18 @@
             text-transform: uppercase;
             box-shadow: 0 4px 15px rgba(230, 57, 70, 0.4);
         }
-
         .btn:hover { background-color: #b91d2a; transform: scale(1.05); }
 
+        /* Serviços */
         .servicos { padding: 100px 20px 50px; max-width: 1200px; margin: 0 auto; text-align: center; }
-
-        .servicos h2 {
-            font-family: 'Oswald', sans-serif; font-size: 2.5rem; margin-bottom: 50px;
-            text-transform: uppercase; color: var(--cor-primaria);
-        }
-
-        .grid-servicos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 30px;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            transition: 0.3s;
-            text-align: left;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card:hover { border-color: var(--cor-secundaria); background: rgba(255, 255, 255, 0.08); }
-
-        .card h3 { color: var(--cor-secundaria); margin-bottom: 15px; font-family: 'Oswald', sans-serif; font-size: 1.5rem; }
-
-        .card p { font-size: 0.95rem; color: #ddd; margin-bottom: 10px; }
-
-        .lista-churrasco { list-style: none; margin: 10px 0 20px; font-size: 0.95rem; }
-        .lista-churrasco li { margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
-
-        .lista-drinks {
-            list-style: none; margin-bottom: 15px; font-size: 0.9rem;
-            display: grid; grid-template-columns: 1fr 1fr; gap: 5px; color: #eee;
-        }
-        .lista-drinks li::before { content: "🔥"; margin-right: 8px; font-size: 0.8rem; }
-
-        .cortesia-box {
-            margin-top: auto; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1);
-            font-style: italic; color: var(--cor-secundaria) !important;
-        }
+        .servicos h2 { font-family: 'Oswald', sans-serif; font-size: 2.5rem; margin-bottom: 50px; text-transform: uppercase; color: var(--cor-primaria); }
+        .grid-servicos { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .card { background: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); text-align: left; }
+        .card h3 { color: var(--cor-secundaria); margin-bottom: 15px; font-family: 'Oswald', sans-serif; }
+        
+        .lista-churrasco, .lista-drinks { list-style: none; margin: 10px 0; }
+        .lista-drinks { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; font-size: 0.9rem; }
+        .lista-drinks li::before { content: "🔥"; margin-right: 8px; }
 
         /* Carrossel */
         .fotos { text-align: center; padding: 60px 20px; }
@@ -186,40 +105,27 @@
         .prev, .next { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.6); color: white; border: none; padding: 12px; cursor: pointer; z-index: 10; border-radius: 50%; }
         .prev { left: 10px; } .next { right: 10px; }
 
-        /* Como Funciona */
-        .como-funciona { padding: 80px 20px; max-width: 1200px; margin: 0 auto; text-align: center; }
-        .como-funciona h2 { font-family: 'Oswald', sans-serif; font-size: 2.5rem; margin-bottom: 40px; text-transform: uppercase; color: var(--cor-primaria); }
-        .passos-container { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; }
-        .passo { flex: 1; min-width: 280px; background: rgba(255, 255, 255, 0.03); padding: 30px; border-radius: 15px; border-bottom: 3px solid var(--cor-secundaria); transition: 0.3s; text-align: center; }
-        .passo-numero { font-family: 'Oswald', sans-serif; font-size: 3rem; color: var(--cor-primaria); display: block; margin-bottom: 10px; }
-        .passo h4 { font-family: 'Oswald', sans-serif; font-size: 1.4rem; color: var(--cor-secundaria); margin-bottom: 10px; text-transform: uppercase; }
-
         /* FAQ */
-        .faq-container { max-width: 900px; margin: 60px auto; padding: 20px 15px; background-color: transparent; }
+        .faq-container { max-width: 900px; margin: 60px auto; padding: 20px 15px; }
         .faq-container h2 { text-align: center; color: var(--cor-laranja-brasa); font-family: 'Oswald', sans-serif; font-size: 2.2rem; margin-bottom: 40px; text-transform: uppercase; }
-        .faq-category { margin-bottom: 50px; }
-        .faq-category h3 { color: #ffbb00; border-left: 4px solid var(--cor-laranja-brasa); padding-left: 15px; margin-bottom: 25px; font-family: 'Oswald', sans-serif; font-size: 1.4rem; }
-        details { background: rgba(26, 26, 26, 0.8); margin-bottom: 15px; border-radius: 8px; border: 1px solid #333; overflow: hidden; transition: 0.3s; }
-        details[open] { border-color: var(--cor-laranja-brasa); background: #111; }
-        summary { padding: 18px; font-weight: bold; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; user-select: none; }
-        summary::after { content: '▼'; font-size: 0.7rem; color: var(--cor-laranja-brasa); transition: 0.3s; }
-        details[open] summary::after { transform: rotate(180deg); }
-        .faq-content { padding: 0 18px 20px 18px; line-height: 1.7; color: #ccc; font-size: 1rem; }
+        .faq-category { margin-bottom: 40px; }
+        .faq-category h3 { color: #ffbb00; border-left: 4px solid var(--cor-laranja-brasa); padding-left: 15px; margin-bottom: 20px; font-family: 'Oswald', sans-serif; }
+        
+        details { background: rgba(26, 26, 26, 0.8); margin-bottom: 10px; border-radius: 8px; border: 1px solid #333; overflow: hidden; }
+        summary { padding: 18px; font-weight: bold; cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none; }
+        summary::after { content: '▼'; font-size: 0.7rem; color: var(--cor-laranja-brasa); }
+        .faq-content { padding: 0 18px 20px 18px; color: #ccc; }
         .highlight { color: #fff; font-weight: bold; }
-        .dica-box { margin-top: 15px; padding: 12px; background: rgba(255, 69, 0, 0.1); border-radius: 5px; border-left: 3px solid var(--cor-laranja-brasa); }
 
-        /* Rodapé e Social */
+        /* Footer */
         .social-section { padding: 40px 20px; text-align: center; }
-        .insta-link { display: inline-flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); padding: 12px 25px; border-radius: 30px; font-weight: bold; transition: 0.3s; }
-        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: white; padding: 15px 25px; border-radius: 50px; display: flex; align-items: center; gap: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); z-index: 1001; text-decoration: none; font-weight: bold; }
+        .insta-link { display: inline-flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); padding: 12px 25px; border-radius: 30px; font-weight: bold; }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; z-index: 1001; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
         footer { padding: 40px 20px; text-align: center; background-color: #000; border-top: 1px solid #222; }
 
         @media (max-width: 768px) {
-            .logo-texto { font-size: 1rem; }
             .carrossel { max-width: 90%; }
             .carrossel-track img { height: 250px; }
-            .faq-container h2 { font-size: 1.8rem; }
-            .lista-drinks { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -240,46 +146,13 @@
 
     <section class="hero">
         <h1>O Sabor Premium da Brasa</h1>
-        <p>Especialista em churrasco e coquetelaria profissional no Rio de Janeiro. Transformamos sua comemoração em um evento inesquecível.</p>
+        <p>Especialista em churrasco e coquetelaria profissional no Rio de Janeiro.</p>
         <a href="https://wa.me/5521971516114" class="btn"> Solicitar Orçamento! </a>
     </section>
 
-    <section class="servicos">
-        <h2>Atendimento de Excelência</h2>
-        <div class="grid-servicos">
-            <div class="card">
-                <h3>Churrasqueiro</h3>
-                <p>Cortes nobres preparados com técnica e braseiro perfeito:</p>
-                <ul class="lista-churrasco">
-                    <li>🔥 <span>Carne mal passada</span></li>
-                    <li>🔥 <span>Carne ao ponto</span></li>
-                    <li>🔥 <span>Carne passada</span></li>
-                    <li>🔪 <span>Corte especializado ao gosto do cliente</span></li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h3>Barman Profissional</h3>
-                <ul class="lista-drinks">
-                    <li>Caipirinhas</li><li>Caipivodkas</li><li>Sex on the Beach</li><li>Pina Colada</li>
-                    <li>Aperol Spritz</li><li>Lagoa Azul</li><li>Mojito</li><li>Gin Tônica</li>
-                </ul>
-                <p>Levamos o Kit Barman completo e saladeiras decorativas.</p>
-            </div>
-
-            <div class="card">
-                <h3>Evento Completo</h3>
-                <p>A solução ideal para festas e casamentos em todo o Rio.</p>
-                <div class="cortesia-box">
-                    <strong>🥗 # De Cortesia eu levo:</strong><br>
-                    Rechaud, utensílios, pratos, talheres, toalhas e bandejas.
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <!-- Seção de Fotos -->
     <section class="fotos">
-        <h2>BRASAS EM AÇÃO 🔥 </h2>
+        <h2>BRASAS EM AÇÃO</h2>
         <div class="carrossel">
             <button class="prev" onclick="moverCarrossel(-1)">&#10094;</button>
             <div class="carrossel-track">
@@ -296,41 +169,44 @@
         </div>
     </section>
 
-    <section class="como-funciona">
-        <h2>Como Funciona</h2>
-        <div class="passos-container">
-            <div class="passo">
-                <span class="passo-numero">01</span>
-                <h4>Consultoria</h4>
-                <p>Definimos juntos o cardápio, data, horário e logística do seu evento.</p>
-            </div>
-            <div class="passo">
-                <span class="passo-numero">02</span>
-                <h4>Planejamento</h4>
-                <p>Enviamos a lista exata de insumos para 5 horas de evento.</p>
-            </div>
-            <div class="passo">
-                <span class="passo-numero">03</span>
-                <h4>O Evento</h4>
-                <p>Chegamos com antecedência e organizamos tudo para você aproveitar!</p>
-            </div>
-        </div>
-    </section>
-
+    <!-- Seção FAQ Restaurada -->
     <div class="faq-container">
         <h2>Dúvidas Frequentes</h2>
+
+        <!-- CATEGORIA CHURRASCO -->
         <div class="faq-category">
-            <h3>🥩 Serviço de Churrasqueiro: </h3>
+            <h3>🥩 Serviço de Churrasqueiro</h3>
             <details>
-                <summary>O que está incluso na contratação?</summary>
+                <summary>O que está incluso?</summary>
                 <div class="faq-content">
-                    <p>Garantimos <span class="highlight">5 horas de serviço especializado</span> e levamos como <strong>cortesia</strong>: Rechauds, utensílios, pratos e talheres.</p>
+                    <p>Levamos como <span class="highlight">cortesia</span>: Rechauds, utensílios de guarnição, pratos, talheres, toalhas e bandejas.</p>
+                </div>
+            </details>
+        </div>
+
+        <!-- CATEGORIA BARMAN (Restaurada aqui) -->
+        <div class="faq-category">
+            <h3>🍸 Serviço de Barman</h3>
+            <details>
+                <summary>Quais os drinks do cardápio?</summary>
+                <div class="faq-content">
+                    <p>Trabalhamos com os melhores drinks:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li><span class="highlight">Clássicos:</span> Caipirinhas, Gin Tônica e Mojito.</li>
+                        <li><span class="highlight">Tropicais:</span> Sex on the Beach, Piña Colada e Lagoa Azul.</li>
+                    </ul>
                 </div>
             </details>
             <details>
-                <summary>Quem fornece as carnes?</summary>
+                <summary>O que o Barman leva?</summary>
                 <div class="faq-content">
-                    <p>Os insumos ficam por conta do cliente. <span class="highlight">Eu ajudo com a lista de quantidades!</span></p>
+                    <p>Levamos o <span class="highlight">Kit Barman completo</span> (coqueteleiras, abridores, etc) e saladeiras decorativas para o balcão.</p>
+                </div>
+            </details>
+            <details>
+                <summary>Qual a duração do serviço?</summary>
+                <div class="faq-content">
+                    <p>Nossos pacotes padrão são de <span class="highlight">4 ou 5 horas</span>, podendo ser estendidos conforme a necessidade do evento.</p>
                 </div>
             </details>
         </div>
@@ -345,9 +221,7 @@
         <p style="color: var(--cor-secundaria); font-size: 0.9rem;">Rio de Janeiro - Jacarepaguá</p>
     </footer>
 
-    <a href="https://wa.me/5521971516114" class="whatsapp-float" target="_blank">
-        <span>WhatsApp</span>
-    </a>
+    <a href="https://wa.me/5521971516114" class="whatsapp-float" target="_blank">WhatsApp</a>
 
     <script>
         let atual = 0;
@@ -359,10 +233,7 @@
             track.style.transform = `translateX(-${atual * 100}%)`;
         }
 
-        // Passa as fotos automaticamente a cada 3 segundos
-        setInterval(() => {
-            moverCarrossel(1);
-        }, 3000);
+        setInterval(() => moverCarrossel(1), 3000);
     </script>
 </body>
 </html>
