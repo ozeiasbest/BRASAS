@@ -464,6 +464,191 @@ setInterval(() => moverCarrossel(1), 3000);
         </a>
     </div>
 
+
+
+
+
+
+<!-- Início da Seção FAQ BRASAS -->
+<style>
+    .faq-container {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 20px;
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background-color: #000; /* Fundo preto para combinar com o site */
+        color: #eee;
+    }
+
+    .faq-container h2 {
+        text-align: center;
+        color: #ff4500; /* Laranja Brasa */
+        font-size: 2rem;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .faq-category {
+        margin-bottom: 40px;
+    }
+
+    .faq-category h3 {
+        color: #ffbb00; /* Amarelo Ouro para subtemas */
+        border-left: 4px solid #ff4500;
+        padding-left: 15px;
+        margin-bottom: 20px;
+        font-size: 1.4rem;
+    }
+
+    details {
+        background: #1a1a1a;
+        margin-bottom: 12px;
+        border-radius: 8px;
+        border: 1px solid #333;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    details[open] {
+        border-color: #ff4500;
+        background: #222;
+    }
+
+    summary {
+        padding: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        outline: none;
+        user-select: none;
+    }
+
+    summary::after {
+        content: '▼';
+        font-size: 0.8rem;
+        color: #ff4500;
+        transition: transform 0.3s ease;
+    }
+
+    details[open] summary::after {
+        transform: rotate(180deg);
+    }
+
+    summary:hover {
+        background-color: #262626;
+    }
+
+    .faq-content {
+        padding: 0 18px 18px 18px;
+        line-height: 1.7;
+        color: #ccc;
+        font-size: 1.05rem;
+    }
+
+    .faq-content ul {
+        margin: 10px 0;
+        padding-left: 20px;
+    }
+
+    .faq-content li {
+        margin-bottom: 8px;
+        list-style-type: square;
+        color: #ffbb00;
+    }
+
+    .faq-content li span {
+        color: #ccc; /* Cor do texto dentro da lista */
+    }
+
+    .highlight {
+        color: #fff;
+        font-weight: bold;
+    }
+
+    .dica-box {
+        margin-top: 15px;
+        padding: 10px;
+        background: rgba(255, 69, 0, 0.1);
+        border-radius: 5px;
+        border-left: 3px solid #ff4500;
+    }
+</style>
+
+<div class="faq-container">
+    <h2>Dúvidas Frequentes (FAQ)</h2>
+
+    <!-- Seção Churrasco -->
+    <div class="faq-category">
+        <h3>🥩 Sobre o Serviço de Churrasco</h3>
+        
+        <details>
+            <summary>O que está incluso na contratação do churrasqueiro?</summary>
+            <div class="faq-content">
+                <p>A contratação garante <span class="highlight">5 horas de serviço especializado</span>. Para sua comodidade e para garantir a estética do evento, oferecemos como <strong>cortesia exclusiva</strong> o uso de nossos materiais profissionais:</p>
+                <ul>
+                    <li><span>Rechauds e utensílios de guarnição;</span></li>
+                    <li><span>Pratos, talheres e pegadores;</span></li>
+                    <li><span>Toalhas de mesa e bandejas de garçom.</span></li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>Quem fornece os insumos (carnes, carvão e acompanhamentos)?</summary>
+            <div class="faq-content">
+                <p>Para que você tenha total liberdade de escolha nas marcas e cortes de sua preferência, os insumos ficam por conta do cliente.</p>
+                <div class="dica-box">
+                    <strong>💡 Dica:</strong> Posso te ajudar com uma lista de quantidades sugeridas para evitar desperdícios no seu evento!
+                </div>
+            </div>
+        </details>
+    </div>
+
+    <!-- Seção Barman -->
+    <div class="faq-category">
+        <h3>🍸 Sobre o Serviço de Barman</h3>
+
+        <details>
+            <summary>Quais drinks estão inclusos no cardápio?</summary>
+            <div class="faq-content">
+                <p>Trabalhamos com uma carta selecionada que agrada a todos os paladares, com opções com ou sem álcool:</p>
+                <ul>
+                    <li><span class="highlight">Clássicos:</span> <span>Caipirinhas e Caipivodkas de frutas, Gin Tônica de Limão e Mojito.</span></li>
+                    <li><span class="highlight">Tropicais:</span> <span>Sex on the Beach, Piña Colada e Lagoa Azul.</span></li>
+                    <li><span class="highlight">Especiais:</span> <span>Aperol Spritz.</span></li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>Quem fornece as bebidas alcoólicas e as frutas?</summary>
+            <div class="faq-content">
+                <p>O fornecimento dos ingredientes é de responsabilidade do cliente. Isso garante que as bebidas sejam exatamente do seu gosto e dentro do seu orçamento.</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>Quanto tempo dura o serviço de bar?</summary>
+            <div class="faq-content">
+                <p>Nossos pacotes padrão são de <span class="highlight">4 ou 5 horas</span> de evento, podendo ser ajustados conforme a necessidade da sua festa.</p>
+            </div>
+        </details>
+    </div>
+</div>
+<!-- Fim da Seção FAQ BRASAS -->
+
+
+
+
+
+
+
+
+
     <footer>
         <p>&copy; 2026 Brasas Churrasqueiro & Barman</p>
         <p style="color: var(--cor-secundaria); font-size: 0.9rem;">Rio de Janeiro - Jacarepaguá</p>
