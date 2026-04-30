@@ -455,7 +455,62 @@
             track.style.transform = `translateX(-${atual * 100}%)`;
         }
 
-        setInterval(() => moverCarrossel(1), 4000);
+
+
+
+
+
+        
+
+<style>
+  .agenda-container {
+    width: 100px; /* Tamanho fixo da sua janelinha */
+    height: 300px;
+    border: 3px solid #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden; 
+    box-shadow: 0 5px 6px rgba(0,0,0,0.1);
+    font-family: sans-serif;
+    background: #fff;
+    margin: 0 auto;
+  }
+
+  .agenda-iframe {
+    width: 800px; /* Deixamos bem largo para nada sumir */
+    height: 100%;
+    border: none;
+    
+    /* COMEÇO DO ZERO: 
+       Se aparecer a Coluna A, mude para -50px.
+       Se ainda não for a D, mude para -100px, e assim por diante. */
+    margin-left: 0px; 
+  }
+
+  h3 {
+    color: #333;
+    font-family: sans-serif;
+    text-align: center;
+  }
+</style>
+
+<h3>Dias já Agendados:</h3>
+
+<div class="agenda-container">
+  <iframe 
+   
+    
+    class="agenda-iframe"
+    src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIVDeIicCOE-nCZ9ih9MoozhvmmG3VhYD_ZzlbTBYyaDvc51gU57TCHzSqCXIkRwJtlwP0k5GPOnt4/pubhtml?gid=33422357&single=true&range=D2:D50&headers=false&chrome=false">
+  </iframe>
+</div>
+ setInterval(() => moverCarrossel(1), 4000);
     </script>
+
+
+
+
+
+
+    
 </body>
 </html>
