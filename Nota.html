@@ -22,6 +22,10 @@
 
         .total-section { margin-top: 40px; text-align: right; border-top: 2px solid #eee; padding-top: 10px; font-size: 24px; font-weight: bold; color: #d32f2f; }
 
+        /* Estilo do ID */
+        .id-section { margin-top: 20px; text-align: left; border-top: 1px solid #eee; padding-top: 10px; }
+        #id-automatico { font-family: 'Courier New', Courier, monospace; font-size: 20px; color: #333; font-weight: bold; letter-spacing: 2px; }
+
         /* Botões */
         .controls { position: fixed; left: 20px; top: 20px; display: flex; flex-direction: column; gap: 10px; }
         .btn { padding: 10px 15px; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }
@@ -50,45 +54,57 @@
 <div class="container">
     <div class="header">
         <h1>BRASAS |</h1>
-        <p>CHURRASQUEIRO 🔥 E BARMAN 🍸</p>
+        <p>CHURRASQUEIRO 🔥 & BARMAN 🍸</p>
     </div>
 
     <div class="field-group">
         <span class="label">Nome do Cliente</span>
-        <div class="editable" contenteditable="true">Marcio Muniz</div>
+        <div class="editable" contenteditable="true">Nome do Cliente</div>
     </div>
 
     <div class="field-group">
         <span class="label">Data e Horário</span>
-        <div class="editable" contenteditable="true">01/05/2026.  14:30</div>
+        <div class="editable" contenteditable="true">04/05/2026 - 14:30</div>
     </div>
 
     <div id="services-list">
         <span class="label">Serviços</span>
-        <!-- Os serviços entram aqui -->
         <div class="dynamic-item">
             <div class="content-area">
                 <select>
+                    
+
+                    
                     <option value="churrasqueiro">CHURRASQUEIRO🔥</option>
                     <option value="barman">BARMAN 🍸</option>
+                    <option value="Garçom">Garçom 🤵</option>
+                    <option value="Ajudante">Ajudante 🤵</option>
+
+
+                    
                 </select>
-                <div class="editable" contenteditable="true">OZEIAS - Kit barman</div>
+                <div class="editable" contenteditable="true">Descreva o serviço...</div>
             </div>
-            <button class="btn-remove" onclick="this.parentElement.remove()""">remover</button>
+            <button class="btn-remove" onclick="this.parentElement.remove()">remover</button>
         </div>
     </div>
 
     <div id="obs-list" style="margin-top: 20px;">
         <span class="label">Observações</span>
-        <!-- As observações entram aqui -->
+    </div>
+
+    <div class="id-section">
+        <span class="label">ID DA ORDEM</span>
+        <span id="id-automatico">GERANDO...</span>
     </div>
 
     <div class="total-section">
-        VALOR R$ <span contenteditable="true">200,00</span>
+        VALOR R$ <span contenteditable="true">0,00</span>
     </div>
 </div>
 
 <script>
+    // Função para adicionar itens
     function addItem(containerId, type) {
         const container = document.getElementById(containerId);
         const div = document.createElement('div');
@@ -98,8 +114,16 @@
             div.innerHTML = `
                 <div class="content-area">
                     <select>
-                        <option value="churrasqueiro">CHURRASQUEIRO</option>
-                        <option value="barman">BARMAN</option>
+                    
+
+                    
+                        <option value="churrasqueiro">CHURRASQUEIRO🔥</option>
+                        <option value="barman">BARMAN 🍸</option>
+                        <option value="Garçom">Garçom 🤵</option>
+                        <option value="Ajudante">Ajudante 🤵</option>
+
+
+                        
                     </select>
                     <div class="editable" contenteditable="true">Descreva o serviço...</div>
                 </div>
@@ -115,8 +139,27 @@
         }
         container.appendChild(div);
     }
+
+    // Função de Gerar ID Corrigida
+    function gerarID() {
+        try {
+            const letras = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            let resultado = '';
+            for (let i = 0; i < 5; i++) {
+                resultado += letras.charAt(Math.floor(Math.random() * letras.length));
+            }
+            const elemento = document.getElementById('id-automatico');
+            if (elemento) {
+                elemento.innerText = '#' + resultado;
+            }
+        } catch (e) {
+            console.error("Erro ao gerar ID:", e);
+        }
+    }
+
+    // Chamar a função imediatamente
+    gerarID();
 </script>
 
 </body>
 </html>
-
